@@ -34,7 +34,7 @@ Process ProcessHeap::Peek(){
 		return this->heap_[0];
 	}
 	else {
-		return Process::Process("",-1,0);
+		return Process("",-1,0);
 	}
 }
 Process ProcessHeap::Remove(){
@@ -44,12 +44,12 @@ Process ProcessHeap::Remove(){
 		ret = this->heap_[0];
 		
 		this->heap_[0] = this->heap_[this->last_index_-1];
-		this->heap_[this->last_index_-1] = Process::Process("",-1,0);
+		this->heap_[this->last_index_-1] = Process("",-1,0);
 		this->last_index_--;
 		this->BubbleDown();
 	}
 	else {
-		ret = Process::Process("",-1,0);
+		ret = Process("",-1,0);
 	}
 	
 	return ret;
