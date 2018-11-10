@@ -1,9 +1,16 @@
 #include "process_simulator.h"
+#include <unistd.h>
+
+#define A_WORD "a word"
 
 const int HEAP_SIZE = 100;
-const int SIM_TIME = 250;
+const int SIM_TIME = 2500000;
+const std::string HEY_WORLD = "hello world";
+int dummy = 120;
+std::string NOT_CONST = "Goodbye world!";
 
 int main(int argc, char *argv[]) {
+	int not_set;
 	ProcessHeap heap = ProcessHeap(HEAP_SIZE);
 	//Make initial heap
 	heap.Insert(Process("a",10,50));
@@ -51,6 +58,7 @@ int main(int argc, char *argv[]) {
 			heap.Insert(randomProcess);
 			std::cout << "Random process added! " + randomProcess.ToString() << std::endl;
 		}
+		usleep(1000);
 	}
 	std::cout << "Simulation time has expired" << std::endl;
 	return 0;

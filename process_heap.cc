@@ -22,10 +22,12 @@ ProcessHeap::~ProcessHeap(){
 
 //public methods
 int ProcessHeap::Insert(Process pin){
-	this->heap_[this->last_index_] = pin;
-	this->BubbleUp();
-	this->last_index_++;
-	
+	if (this->last_index_ < this->size_) {
+		this->heap_[this->last_index_] = pin;
+		this->BubbleUp();
+		this->last_index_++;
+	}
+
 	return 0;
 }
 Process ProcessHeap::Peek(){
@@ -58,6 +60,8 @@ int ProcessHeap::PrintHeap(){
 	for (int i = 0; i < this->last_index_; ++i) {
 		std::cout << this->heap_[i].ToString() << std::endl;
 	}
+
+	return 0;
 }
 bool ProcessHeap::IsEmpty(){
 	if (this->last_index_ == 0) {
@@ -72,6 +76,8 @@ int ProcessHeap::HeapSort(){
 		std::cout << this->Remove().ToString() << std::endl;
 	}
 	this->last_index_ = 0;
+
+	return 0;
 }
 
 //private methods
