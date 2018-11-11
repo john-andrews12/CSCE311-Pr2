@@ -26,6 +26,9 @@ HelloWorld: $H
 hello_world.o: hello_world.cc
 	$(GPP) -c hello_world.cc
 
+HelloOb:
+	g++ -g hello_world.cc -o HelloOb
+
 InputTest: $I
 	$(GPP) -o InputTest $I
 
@@ -44,5 +47,8 @@ UnInit: $U
 uninit.o: uninit.cc
 	$(GPP) -c uninit.cc
 
+trying: 
+	g++ -g uninit.cc -o trying
+
 clean:
-	rm ./*.o ./ProcSim ./HelloWorld ./InputTest ./FunctionTest ./UnInit
+	rm ./*.o ./ProcSim ./Hello* ./InputTest ./FunctionTest ./UnInit ./trying
