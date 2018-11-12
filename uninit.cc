@@ -4,7 +4,6 @@ int main(int argc, char *argv[]) {
 	std::string input = "";
 	
 	std::string uninit;
-	int uninit2;
 	
 	std::cout << "ENTER SINGLE WORD INPUT (or '-1' to exit)" << std::endl;
 	
@@ -17,7 +16,6 @@ int main(int argc, char *argv[]) {
 		}
 		else if (input == "secret123") {
 			uninit = "this is initialized now :O";
-			uninit2 = 12;
 		}
 		else {
 			std::cout << "The input was: " << input << std::endl;

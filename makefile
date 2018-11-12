@@ -35,11 +35,17 @@ InputTest: $I
 input.o: input.cc
 	$(GPP) -c input.cc
 
+InputOb:
+	g++ -g input.cc -o InputOb
+
 FunctionTest: $F
 	$(GPP) -o FunctionTest $F
 
 square.o: square.cc
 	$(GPP) -c square.cc
+
+FunctionOb:
+	g++ -g -std=c++11 square.cc -o FunctionOb
 
 UnInit: $U
 	$(GPP) -o UnInit $U
@@ -50,5 +56,8 @@ uninit.o: uninit.cc
 trying: 
 	g++ -g uninit.cc -o trying
 
+ArrayOb:
+	g++ -g array_sum.cc -o ArrayOb
+
 clean:
-	rm ./*.o ./ProcSim ./Hello* ./InputTest ./FunctionTest ./UnInit ./trying
+	rm ./*.o ./ArrayOb ./ProcSimi ./Hello* ./Input* ./Function* ./UnInit ./trying

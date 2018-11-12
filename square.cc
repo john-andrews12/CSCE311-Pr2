@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 double GetSquare(double input) {
 	double ret = input;
@@ -9,6 +10,7 @@ double GetSquare(double input) {
 
 int main(int argc, char *argv[]) {
 	std::string input = "";
+	double inputd = 0.0;
 	
 	std::cout << "ENTER A NUMBER AND ILL GIVE YOU THE SQUARE OF IT (enter 'stop' to exit)" << std::endl;
 	
@@ -20,7 +22,8 @@ int main(int argc, char *argv[]) {
 			accepting = false;
 		}
 		else {
-			std::cout << "The square is: " << std::to_string(GetSquare(stod(input))) << std::endl;
+			inputd = std::stod(input);
+			std::cout << "The square is: " << GetSquare(inputd) << std::endl;
 		}
 	}
 	
