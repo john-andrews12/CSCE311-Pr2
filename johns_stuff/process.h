@@ -2,6 +2,7 @@
 #define PROC_H
 
 #include <iostream>
+#include <string>
 
 const std::string DEFAULT_NAME = "Default";
 const int DEFAULT_PRIORITY = 1;

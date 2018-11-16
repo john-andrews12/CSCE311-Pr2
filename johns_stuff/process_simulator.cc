@@ -1,5 +1,6 @@
 #include "process_simulator.h"
 #include <unistd.h>
+#include <string>
 
 #define A_WORD "a word"
 

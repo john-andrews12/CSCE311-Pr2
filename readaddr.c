@@ -8,12 +8,24 @@ Finally, print the number of valid/invalid addresses.
 */
 #include <stdio.h>
 #include <unistd.h>
-#include <linux/sched.h>
+//#include "/usr/src/linux-headers-4.8.0-56/include/linux/sched.h"
+#include <sched.h>
+//#include <asm/thread_info.h>
+//#include "sched2.h"
+//#include <linux-headers-4.8.0-56/include/linux/sched.h>
+
+struct tast_struct;
 
 int readAddr(void *p)
 {
-    struct task_struct task;
+    struct task_struct *task; 
+    
     struct mm_struct *mem;
+    
+    mem = tast->mm;
+
+    printf("%d", task->thread_info->previous_esp);
+    
     struct vm_area_struct *vm;
     return 0;
 }

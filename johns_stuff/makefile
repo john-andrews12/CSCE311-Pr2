@@ -11,6 +11,9 @@ U = uninit.o
 ProcSim: $A $B $D
 	$(GPP) -o ProcSim $A $B $D
 
+ProcSimOb:
+	g++ -g -std=c++11 process_simulator.cc process_heap.cc process.cc -o ProcSimOb
+
 process_simulator.o: process_simulator.h process_simulator.cc
 	$(GPP) -c process_simulator.cc
 
@@ -59,5 +62,11 @@ trying:
 ArrayOb:
 	g++ -g array_sum.cc -o ArrayOb
 
+ArrayUnOb:
+	g++ -g array_sum_un.cc -o ArrayUnOb
+
+ExternIntOb:
+	g++ -g extern_int.cc -o ExternIntOb
+
 clean:
-	rm ./*.o ./ArrayOb ./ProcSimi ./Hello* ./Input* ./Function* ./UnInit ./trying
+	rm ./*.o ./Array* ./ProcSim ./ExternIntOb ./Hello* ./Input* ./Function* ./UnInit ./trying
