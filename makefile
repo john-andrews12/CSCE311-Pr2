@@ -22,4 +22,4 @@ ExternIntOb:
 	g++ -g extern_int.cc -o ExternIntOb
 
 clean:
-	rm ./*.o ./Array* ./ProcSim* ./ExternIntOb ./Hello* ./Input* ./Function* ./UnInit ./trying
+	rm ./Array* ./ProcSimOb ./ExternIntOb ./HelloOb ./InputOb ./FunctionOb
